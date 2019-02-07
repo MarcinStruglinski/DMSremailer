@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Akceptacja dokumnetów</title>
+</head>
+
+<body>
+  
+ 
+
+
+ <form action="#" method="post" th:action="@{/save}" th:object="${CommentsToken}">
+<h1 th:if="${akcept}">Dokumnet został zakceptowany</h1>
+<h1 th:unless="${akcept}">Dokumnet odrzucony</h1>
+<h1>Dodaj uwagi</h1>
+  <p class="hide-me"><input type="hidden" th:field="${CommentsToken.token}" /></p>
+
+<p><textarea  rows="20" cols="100" th:field="${CommentsToken.Content}"></textarea></p>
+
+<p><input type="submit" value="Zapisz" /></p>
+</form>
+</body>
+</html>
